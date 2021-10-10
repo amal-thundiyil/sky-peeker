@@ -1,0 +1,265 @@
+/*
+=================
+GLOBAL VARIABLES
+=================
+*/
+
+:root {
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --card-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  --card-hover: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease-in;
+  --button-radius: 15px;
+}
+
+/*
+==============
+GLOBAL STYLES
+==============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-system);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.btn {
+  background-color: darkgrey;
+  font-family: var(--font-system);
+  border: none;
+  margin: 1em;
+  padding: 1em;
+  color: white;
+  border-radius: var(--button-radius);
+  transition: var(--transition);
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  background-color: black;
+}
+
+/*
+=======
+LAYOUT
+=======
+*/
+
+.nav-link {
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+/* fix color not working on .nav-link*/
+.nav-link:hover {
+  color: darkblue;
+}
+
+.navbar {
+  box-shadow: var(--card-hover);
+  margin-bottom: 10em;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.section {
+  display: grid;
+  min-height: 50vh;
+  place-items: center;
+}
+
+.section-center {
+  display: grid;
+  place-items: center;
+  gap: 1em;
+  text-align: center;
+}
+
+.search-container {
+  display: flex;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 5em;
+}
+
+#search-text {
+  padding: 0 0.5em;
+  flex: 1 1 auto;
+  min-width: 40px;
+  font-size: 1.3rem;
+  border: none;
+  outline: none;
+}
+
+.add-btn {
+  margin: 0;
+  border-radius: 0;
+  font-size: 1.3rem;
+}
+
+.location-list {
+  position: relative;
+  padding: 2em;
+  background-image: linear-gradient(rgb(211, 211, 211), white);
+  box-shadow: var(--card-shadow);
+  display: grid;
+  gap: 1em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.location-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+.location-extra {
+  display: grid;
+  gap: 0.5em;
+}
+
+@media screen and (min-width: 745px) {
+  .location-list {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .location-list {
+    display: flex;
+    flex-flow: wrap column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .location-extra {
+    display: none;
+  }
+}
+
+.temp-c::after {
+  content: "\2103";
+}
+
+.temp-f::after {
+  content: "\2109";
+}
+
+.temp-k::after {
+  content: "\212A";
+}
+
+/* fix temp-toggle font-family */
+.temp-toggle {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-system);
+}
+
+@media screen and (max-width: 350px) {
+  .temp-toggle {
+    display: none;
+  }
+}
+
+.temp-btn-container {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+}
+.temp-btn {
+  background-color: white;
+  border: none;
+  margin: 0.5em;
+  padding: 1em;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: var(--card-shadow);
+}
+
+.delete-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  background-color: none;
+  border: none;
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 350px) {
+  .delete-btn {
+    margin: 0.3em;
+  }
+}
+
+.single-location {
+  background-image: linear-gradient(rgba(169, 169, 169, 0.247), white);
+  box-shadow: var(--card-shadow);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5em;
+  text-align: center;
+  padding: 5em;
+}
+
+.single-location-extra {
+  text-align: left;
+  color: grey;
+}
+
+.loader {
+  display: grid;
+  place-items: center;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loader img {
+  max-width: 100%;
+}
