@@ -1,6 +1,6 @@
-# Weather App
+# Sky Peeker
 
-A simple weather app using React.js, CSS and OpenWeather API.
+Developed a fully responsive website using for users to check the weather forecast of their location input developed using React.js, HTML, CSS, OpenWeatherAPI, Heroku.
 
 ## Link to hosted app:
 
